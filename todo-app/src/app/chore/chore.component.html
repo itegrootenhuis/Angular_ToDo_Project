@@ -1,1 +1,17 @@
-<p>chore works!</p>
+<ul class="chores">
+  <li *ngFor="let chore of chores">
+    <span (click)="onEditName(chore)">{{ chore.name }}</span> -
+    <span (click)="onToggleChore(chore)">{{ chore.isCompleted }}</span>
+    <!-- <div class="editName hidden">
+      <label
+        >Edit Task Name:
+        <input [(ngModel)]="chore.name" placeholder="Chore" />
+      </label>
+    </div> -->
+  </li>
+</ul>
+
+<div class="addChore">
+  <label>Add Chore</label>
+  <input [(ngModel)]="chores" placeholder="Chore name" />
+</div>
