@@ -1,0 +1,6 @@
+<ul class="tasks">
+  <li *ngFor="let task of tasks">
+    <span (dblclick)="onEditName(task)">{{ task.name }}</span> -
+    <span (click)="onToggleTask(task)">{{ task.isCompleted }}</span>
+  </li>
+</ul>

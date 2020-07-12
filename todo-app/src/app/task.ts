@@ -1,4 +1,4 @@
-export interface Chore {
+export interface Task {
   isCompleted: boolean;
   name: string;
 }

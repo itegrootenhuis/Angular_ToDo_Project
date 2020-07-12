@@ -1,0 +1,6 @@
+<div class="addTask">
+  <input
+    (keyup.enter)="onAddTask($event.target.value); $event.target.value = ''"
+    placeholder="What needs to be done?"
+  />
+</div>
