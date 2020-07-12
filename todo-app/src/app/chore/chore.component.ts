@@ -14,6 +14,10 @@ export class ChoreComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onAddChore(chore: string): void {
+    this.chores.push({ name: chore, isCompleted: false });
+  }
+
   onEditName(chore: Chore): void {
     //NEED TO FINISH
     console.log(chore);
