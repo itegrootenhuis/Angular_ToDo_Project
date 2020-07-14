@@ -2,6 +2,6 @@
   <li *ngFor="let task of tasks">
     <input (click)="onToggleTask(task)" type="checkbox" />
     <span (dblclick)="onEditName(task)">{{ task.name }}</span>
-    <button class="destroy"></button>
+    <button class="destroy"><fa-icon [icon]="faTimes"></fa-icon></button>
   </li>
 </ul>
