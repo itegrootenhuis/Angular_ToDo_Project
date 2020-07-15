@@ -1,7 +1,17 @@
 <ul class="tasks">
-  <li *ngFor="let task of tasks">
+  <li
+    *ngFor="let task of tasks"
+    (mouseenter)="toggleDeleteTask(task, 'in')"
+    (mouseleave)="toggleDeleteTask(task, 'out')"
+  >
     <input (click)="onToggleTask(task)" type="checkbox" />
-    <span (dblclick)="onEditName(task)">{{ task.name }}</span>
-    <button class="destroy"><fa-icon [icon]="faTimes"></fa-icon></button>
+    <span
+      (dblclick)="onEditName(task)"
+      [ngClass]="{ strike: task.isCompleted === true }"
+      >{{ task.name }}</span
+    >
+    <button *ngIf="task.showDeleteBtn" (click)="deleteTask(task)">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
   </li>
 </ul>

@@ -10,11 +10,16 @@ export class TaskService {
 
   tasks = Tasks;
 
-  getTasks(): Task[] {
+  addTask(task: string): void {
+    this.tasks.push({ name: task, isCompleted: false, showDeleteBtn: false });
+  }
+
+  deleteTask(task: Task): Task[] {
+    this.tasks = this.tasks.filter((x) => x.name !== task.name);
     return this.tasks;
   }
 
-  addTask(task: string): void {
-    this.tasks.push({ name: task, isCompleted: false });
+  getTasks(): Task[] {
+    return this.tasks;
   }
 }

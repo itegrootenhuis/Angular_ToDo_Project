@@ -22,9 +22,19 @@ export class TaskComponent implements OnInit {
     console.log(task);
   }
 
+  deleteTask(task: Task): void {
+    this.tasks = this.taskService.deleteTask(task);
+  }
+
   onToggleTask(task: Task): void {
     task.isCompleted === true
       ? (task.isCompleted = false)
       : (task.isCompleted = true);
+  }
+
+  toggleDeleteTask(task: Task): void {
+    task.showDeleteBtn === false
+      ? (task.showDeleteBtn = true)
+      : (task.showDeleteBtn = false);
   }
 }
